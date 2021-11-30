@@ -3,39 +3,26 @@
 
 using namespace std;
 
-string func1(string x){
+string Re_T (string x)
+{
 	int i = 0, L = x.size();
-	string y = "";
-	while(i < L){
-		y += x[L-i-1];
+	string y = x ;
+	while(i < L)
+	{
+		y[i] = x[L-i-1];
 		i++;
 	}
 	return y;
 }
 
-string func2(string x){
-	int i = 0, L = x.size();
-	string y = "";
-	while(i < L){
-		y += toupper(x[i]);
-		i++;
-	}
-	return y;	
-}
+int main()
+{
+    cout << "Input text: " ;
+	string x;
+	cin >> x;
+    cout << "Reversed text: " << Re_T(x) << "\n";
 
-string func3(string x){
-	int i = 0, L = x.size();
-	string y = "";
-	while(i < L){
-		y += tolower(x[i]);
-		i++;
-	}
-	return y;	
-}
-
-int main(){
-    cout >> "Input text: "
-    cout >> "Reversed text: "
-    cout >> "Palindrome: "
+	if(x==Re_T(x)) cout << "Palindrome: Yes" ;
+	else 		   cout << "Palindrome: No" ;
     return 0;
 }
